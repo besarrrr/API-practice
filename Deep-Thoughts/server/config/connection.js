@@ -8,3 +8,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
 });
 
 module.exports = mongoose.connection;
+
+
+/// This is connecting the database and then exports it out 

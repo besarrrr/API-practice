@@ -12,3 +12,6 @@ db.once('open', () => {
     console.log(`API server running on port ${PORT}!`);
   });
 });
+
+// Connection is imorted from config/connection 
+// This is where we run the server and listen for the connection with db.open()
