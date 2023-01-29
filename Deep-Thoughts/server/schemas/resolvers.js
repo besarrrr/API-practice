@@ -115,6 +115,8 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
           }
     }
-};
+};    
+
+//resolvers 
 
 module.exports = resolvers;
