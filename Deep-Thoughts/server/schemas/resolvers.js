@@ -117,6 +117,5 @@ const resolvers = {
     }
 };    
 
-//resolvers 
 
 module.exports = resolvers;
