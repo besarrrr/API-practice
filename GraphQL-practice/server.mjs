@@ -10,6 +10,10 @@ import bodyParser from 'body-parser';
 const typeDefs = `#graphql
   type Query {
     hello: String
+  },
+
+  type Query {
+    name: String
   }
 `;
 
