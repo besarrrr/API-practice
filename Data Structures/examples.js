@@ -53,3 +53,4 @@ class Node {
 let root = new Node("Jane Doe");
 root.left = new Node("John Doe");
 root.right = new Node("John Smith");
+
