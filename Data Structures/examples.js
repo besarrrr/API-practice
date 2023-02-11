@@ -56,7 +56,7 @@ root.right = new Node("John Smith");
 
 
 
-// Queston 1: Is Unique
+// Question 1: Is Unique
 
 function isUnique(arr) {
 
@@ -82,4 +82,78 @@ function isUnique(arr) {
 
 // I know that the foor loop is going to iterate through each element in the array and see if it has already been seen.
 // This is done by checking if the currrent element arr[i] has been seen in the seenValues object
-// Area of consusion is how the empty object gets the iterated keys in it??
+// Area of consusion is how the empty object gets the iterated keys in it?
+
+
+
+// Question 2: Permutation (rearrangement of the elements)
+
+function permutation(string1, string2){
+
+    let ex1 = string1.length;
+    let ex2 = string2.length;
+
+    if ( ex1 != ex2 ) {
+        return false;
+    }
+
+    // First check if both string are the same length, if != same length then can't be a permutation
+
+    // split the string into lists using the .split() method
+
+    let str1 = string1.split('');
+    let str2 = string2.split('');
+
+    // use .sort() to put the strings  in UTF-16 code units order
+
+    str1.sort();
+    str2.sort();
+
+    // Compare sorted strings
+     for(let i = 0; i < ex1; i++) {
+        if (str1[i] != str2[i]) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+}
+
+// Above code is wrong
+
+
+// Bottom is correct 
+
+function isPermutation(string1, string2) {
+    if (string1.length !== string2.length) {
+      return false;
+    }
+  
+    let charCount = {};
+  
+    for (let i = 0; i < string1.length; i++) {
+      let char = string1[i];
+      charCount[char] = charCount[char] + 1 || 1;
+    }
+  
+    for (let i = 0; i < string2.length; i++) {
+      let char = string2[i];
+      if (!charCount[char]) {
+        return false;
+      } else {
+        charCount[char]--;
+      }
+    }
+  
+    return true;
+  }
+
+
+// the function creates an empty object charCount to store the frequency count of each character in string1. The function then loops over the characters in
+// string1 and adds 1 to the count for each character.
+// Finally, the function loops over the characters in string2 and decrements the count for each character. If the count for a character becomes negative, 
+// it means that string2 contains a character that was not in string1, so the function returns false.
+//After all characters in string2 have been processed, the function returns true if all character counts are 0, indicating that the two strings are permutations of each other.
+
+//would love to walk over this one together!
