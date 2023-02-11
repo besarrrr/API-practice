@@ -120,10 +120,10 @@ function permutation(string1, string2){
 
 }
 
-// Above code is wrong
+// Above code is wrong,  it came from my brain/google bits an peieces to make an asnswer
 
 
-// Bottom is correct 
+// Bottom is correct and was created via ChatGPT when I asked it if my code was correct and it said no :/ 
 
 function isPermutation(string1, string2) {
     if (string1.length !== string2.length) {
