@@ -54,3 +54,32 @@ let root = new Node("Jane Doe");
 root.left = new Node("John Doe");
 root.right = new Node("John Smith");
 
+
+
+// Queston 1: Is Unique
+
+function isUnique(arr) {
+
+    //  Function takes an array as an argument. 
+    // seenValues is an empty object that is going to be used to keep track of values seen
+    
+    const seenValues = {}
+
+    // For loop is used to iterate over the array
+  
+    for (let i = 0; i < arr.length; i++) {
+      // we already saw this element in the array
+      if (seenValues[arr[i]]) {
+        return false;
+      } else {
+        seenValues[arr[i]] = true
+      }
+    }
+  // if all elements in the array have been processed without returning false, the function returns true,
+    return true;
+  }
+
+
+// I know that the foor loop is going to iterate through each element in the array and see if it has already been seen.
+// This is done by checking if the currrent element arr[i] has been seen in the seenValues object
+// Area of consusion is how the empty object gets the iterated keys in it??
