@@ -157,3 +157,30 @@ function isPermutation(string1, string2) {
 //After all characters in string2 have been processed, the function returns true if all character counts are 0, indicating that the two strings are permutations of each other.
 
 //would love to walk over this one together!
+
+
+// question 3: urlIfy
+
+function urlIfy(string) {
+
+
+    for ( let i=0; i <= string.length; i++) {
+        if ( i == " ") i = "%20";
+        else  i == i;
+    }
+    return string;
+
+}
+// mine is top, correct is bottom= closer!!
+
+function urlIfy(string, length) {
+    let result = "";
+    for (let i = 0; i < length; i++) {
+        if (string[i] === " ") {
+            result += "%20";
+        } else {
+            result += string[i];
+        }
+    }
+    return result;
+}
