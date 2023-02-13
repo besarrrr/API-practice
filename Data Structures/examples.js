@@ -184,3 +184,51 @@ function urlIfy(string, length) {
     }
     return result;
 }
+
+
+// Question 4 Palindrome permutation
+
+function palPer(string) {
+
+
+}
+
+// Q 5 one away
+
+function oneAway(string1, string2) {
+    let count = 0
+
+    for (let i =0 ; i <= string1.length; i++) {
+        for(let j =0; j <= string2.length; j++) {
+            if (string1[i] === string2[j]) {
+                count += 0;
+            } else {
+                count += 1;
+            }
+        }
+    }
+
+    if (count <= 1) {
+        return true;
+    } else {
+        return false; 
+    }
+}
+
+function oneAway(string1, string2) {
+    let count = 0
+
+    for (let i =0 ; i < string1.length; i++) {
+        for(let j =0; j < string2.length; j++) {
+            if (string1[i] !== string2[j] && i !== j) { // dont super get this part of i!==j and why that is correct
+                count += 1;
+            }
+        }
+    }
+
+    if (count <= 1) {
+        return true;
+    } else {
+        return false; 
+    }
+}
