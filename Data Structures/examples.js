@@ -120,7 +120,7 @@ function permutation(string1, string2){
 
 }
 
-// Above code is wrong,  it came from my brain/google bits an peieces to make an asnswer
+// Above code is wrong,  it came from my brain/google bits and pieces to make an answer
 
 
 // Bottom is correct and was created via ChatGPT when I asked it if my code was correct and it said no :/ 
@@ -186,14 +186,42 @@ function urlIfy(string, length) {
 }
 
 
-// Question 4 Palindrome permutation
+// Question 4 Palindrome permutation- check is a string given can be made into a permutation and # of permutations it has
 
 function palPer(string) {
+    // there must be two of every char, only one odd char
+
+    let hash = {}; //create a hash table to store letters,if the same letter is seen again you delete it from the hash table
+    let charCount = 0;
+
+    for (let i = 0; i < string.length; i++) {
+            let c = string[i]; // current character is at string[i]
+            if ( c === '') {
+                continue; // skip spaces
+            }
+            if (hash[c]) {
+                delete hash[c]; //if it is already in the hash table delete it 
+            } else {
+                hash[c] = true // if not store it in the hash as true
+            }
+            charCount++; // increment character count 
+    }
+
+    if (charCount % 2 === 0) {
+        return Object.keys(hash).length === 0;
+    } else {
+        return Object.keys(hash).length ===1;
+    }
+    // this is saying that for the string to be a palindrone there must be 0 || 1 keys in the hash table
+    // the number of characters in the string is even and there are no characters left in the hash table, the code inside the if statement is executed and the function returns true. 
+    //If the number of characters in the string is odd and there is more than 1 character left in the hash table, the code inside the else block is executed and the function returns false.
 
 
 }
 
-// Q 5 one away
+
+
+// Q 5 one away - goal is to see if string 1 is one or less moves away from being string 2
 
 function oneAway(string1, string2) {
     let count = 0
@@ -232,3 +260,6 @@ function oneAway(string1, string2) {
         return false; 
     }
 }
+
+
+// queston 6 String compression: ex is taking string that is aabcccccaa into a2b1cfa3
