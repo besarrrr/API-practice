@@ -262,7 +262,7 @@ function oneAway(string1, string2) {
 }
 
 
-// question 6 String compression: ex is taking string that is aabcccccaa into a2b1cfa3
+// question 6 String compression: ex is taking string that is aabcccccaa into a2b1cfa2
 
 function stringComp(string) {
 
