@@ -221,7 +221,7 @@ function palPer(string) {
 
 
 
-// Q 5 one away - goal is to see if string 1 is one or less moves away from being string 2
+// Q 5 one away - goal is to see if string 1 is one or less moves away from being string 2 
 
 function oneAway(string1, string2) {
     let count = 0
