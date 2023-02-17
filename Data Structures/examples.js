@@ -173,7 +173,7 @@ function urlIfy(string) {
 }
 // mine is top, correct is bottom= closer!!
 
-function urlIfy(string, length) {
+function urlIfy2(string, length) {
     let result = "";
     for (let i = 0; i < length; i++) {
         if (string[i] === " ") {
@@ -243,7 +243,7 @@ function oneAway(string1, string2) {
     }
 }
 
-function oneAway(string1, string2) {
+function oneAway2(string1, string2) {
     let count = 0
 
     for (let i =0 ; i < string1.length; i++) {
@@ -292,4 +292,6 @@ function stringComp(string) {
        return compressed;
     }
    
-   }
+}
+
+module.exports = { isUnique };
