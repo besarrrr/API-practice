@@ -173,27 +173,8 @@ function palPer(string) {
 
 // Q 5 one away - goal is to see if string 1 is one or less moves away from being string 2 
 
+
 function oneAway(string1, string2) {
-    let count = 0
-
-    for (let i =0 ; i <= string1.length; i++) {
-        for(let j =0; j <= string2.length; j++) {
-            if (string1[i] === string2[j]) {
-                count += 0;
-            } else {
-                count += 1;
-            }
-        }
-    }
-
-    if (count <= 1) {
-        return true;
-    } else {
-        return false; 
-    }
-}
-
-function oneAway2(string1, string2) {
     let count = 0
 
     for (let i =0 ; i < string1.length; i++) {
@@ -244,4 +225,4 @@ function stringComp(string) {
    
 }
 
-module.exports = { isUnique, permutation, urlIfy, palPer };
+module.exports = { isUnique, permutation, urlIfy, palPer, oneAway };

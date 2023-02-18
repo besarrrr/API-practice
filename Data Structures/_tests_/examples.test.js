@@ -1,4 +1,4 @@
-const { isUnique, permutation, urlIfy, palPer } = require("../examples.js")
+const { isUnique, permutation, urlIfy, palPer, oneAway } = require("../examples.js")
 
 
 // Test Q1
@@ -49,9 +49,9 @@ test("replace empty spaces in string with %20" , () => {
 // Test Q4 for True
 test("check if a string given can be made into a permutation", () => {
 
-    const string = "tacocat"
+    const string = "tacocat";
 
-    expect(palPer(string)).toBe(true)
+    expect(palPer(string)).toBe(true);
 
 })
 
@@ -59,8 +59,30 @@ test("check if a string given can be made into a permutation", () => {
 
 test("check if a string given can be made into a permutation", () => {
 
-    const string = "nottacocat"
+    const string = "nottacocat";
 
-    expect(palPer(string)).toBe(false)
+    expect(palPer(string)).toBe(false);
+
+})
+
+// Test Q5 for True
+
+test("check to see if the strings are one change away from eachother", () => {
+
+    const string1= "abc";
+    const string2 = "abcd";
+
+    expect(oneAway( string1, string2)).toBe(true);
+
+})
+
+// Test Q5 for False
+
+test("check to see if the strings are one change away from eachother", () => {
+
+    const string1= "abc";
+    const string2 = "abcddd";
+
+    expect(oneAway( string1, string2)).toBe(false);
 
 })
