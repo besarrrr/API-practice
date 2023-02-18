@@ -123,8 +123,6 @@ function permutation(string1, string2){
 
 // question 3: urlIfy
 
-
-
 function urlIfy(string) {
     let result = "";
     for (let i = 0; i < string.length; i++) {
@@ -138,7 +136,7 @@ function urlIfy(string) {
 }
 
 
-// Question 4 Palindrome permutation- check is a string given can be made into a permutation and # of permutations it has
+// Question 4 Palindrome permutation- check is a string given can be made into a permutation 
 
 function palPer(string) {
     // there must be two of every char, only one odd char
@@ -246,4 +244,4 @@ function stringComp(string) {
    
 }
 
-module.exports = { isUnique, permutation, urlIfy };
+module.exports = { isUnique, permutation, urlIfy, palPer };
