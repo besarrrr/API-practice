@@ -106,12 +106,12 @@ function permutation(string1, string2){
 
     // use .sort() to put the strings  in UTF-16 code units order
 
-    str1.sort();
-    str2.sort();
+   let finalString = str1.sort(); 
+   let finalString2 = str2.sort();
 
     // Compare sorted strings
      for(let i = 0; i < ex1; i++) {
-        if (str1[i] != str2[i]) {
+        if (finalString[i] != finalString2[i]) {
             return false;
         } else {
             return true;
@@ -119,44 +119,6 @@ function permutation(string1, string2){
     }
 
 }
-
-// Above code is wrong,  it came from my brain/google bits and pieces to make an answer
-
-
-// Bottom is correct and was created via ChatGPT when I asked it if my code was correct and it said no :/ 
-
-function isPermutation(string1, string2) {
-    if (string1.length !== string2.length) {
-      return false;
-    }
-  
-    let charCount = {};
-  
-    for (let i = 0; i < string1.length; i++) {
-      let char = string1[i];
-      charCount[char] = charCount[char] + 1 || 1;
-    }
-  
-    for (let i = 0; i < string2.length; i++) {
-      let char = string2[i];
-      if (!charCount[char]) {
-        return false;
-      } else {
-        charCount[char]--;
-      }
-    }
-  
-    return true;
-  }
-
-
-// the function creates an empty object charCount to store the frequency count of each character in string1. The function then loops over the characters in
-// string1 and adds 1 to the count for each character.
-// Finally, the function loops over the characters in string2 and decrements the count for each character. If the count for a character becomes negative, 
-// it means that string2 contains a character that was not in string1, so the function returns false.
-//After all characters in string2 have been processed, the function returns true if all character counts are 0, indicating that the two strings are permutations of each other.
-
-//would love to walk over this one together!
 
 
 // question 3: urlIfy
@@ -294,4 +256,4 @@ function stringComp(string) {
    
 }
 
-module.exports = { isUnique };
+module.exports = { isUnique, permutation, };
