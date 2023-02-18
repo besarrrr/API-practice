@@ -1,4 +1,4 @@
-const { isUnique, permutation, } = require("../examples.js")
+const { isUnique, permutation, urlIfy } = require("../examples.js")
 
 test("Check to see if the string is composed of unique values", () => {
 
@@ -22,4 +22,13 @@ test("Check to see if the strings are permutations", () => {
     expect(permutation(string1, string3)).toBe(false);
     expect(permutation(string1, string4)).toBe(false);
 
+})
+
+test("replace empty spaces in string with %20" , () => {
+    
+    const string1 = "testing testing testing";
+    const string2 = "testtesttest";
+
+    expect(urlIfy(string1)).toBe("testing%20testing%20testing");
+    expect(urlIfy(string2)).toBe("testtesttest");
 })

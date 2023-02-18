@@ -123,21 +123,11 @@ function permutation(string1, string2){
 
 // question 3: urlIfy
 
+
+
 function urlIfy(string) {
-
-
-    for ( let i=0; i <= string.length; i++) {
-        if ( i == " ") i = "%20";
-        else  i == i;
-    }
-    return string;
-
-}
-// mine is top, correct is bottom= closer!!
-
-function urlIfy2(string, length) {
     let result = "";
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < string.length; i++) {
         if (string[i] === " ") {
             result += "%20";
         } else {
@@ -256,4 +246,4 @@ function stringComp(string) {
    
 }
 
-module.exports = { isUnique, permutation, };
+module.exports = { isUnique, permutation, urlIfy };
