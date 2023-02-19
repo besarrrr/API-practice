@@ -193,7 +193,7 @@ function oneAway(string1, string2) {
 }
 
 
-// question 6 String compression: ex is taking string that is aabcccccaa into a2b1cfa2
+// question 6 String compression: ex is taking string that is aabcccccaa into a2b1c5a2
 
 function stringComp(string) {
 
@@ -210,7 +210,7 @@ function stringComp(string) {
            i++;
         }   
          if (count === 1){
-           compressed += currentLetter;
+           compressed += currentLetter + count;
          } else {
            compressed += currentLetter + count;
          }
@@ -225,4 +225,4 @@ function stringComp(string) {
    
 }
 
-module.exports = { isUnique, permutation, urlIfy, palPer, oneAway };
+module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp };

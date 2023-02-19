@@ -1,4 +1,4 @@
-const { isUnique, permutation, urlIfy, palPer, oneAway } = require("../examples.js")
+const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp } = require("../examples.js")
 
 
 // Test Q1
@@ -28,7 +28,7 @@ test("Check to see if the strings are permutations", () => {
     expect(permutation(string1, string3)).toBe(false);
     expect(permutation(string1, string4)).toBe(false);
 
-})
+});
 
 
 // Test Q3
@@ -40,7 +40,7 @@ test("replace empty spaces in string with %20" , () => {
 
     expect(urlIfy(string1)).toBe("testing%20testing%20testing");
     expect(urlIfy(string2)).toBe("testtesttest");
-})
+});
 
 
 // Starting here will check each option (true/false indivually)
@@ -53,7 +53,7 @@ test("check if a string given can be made into a permutation", () => {
 
     expect(palPer(string)).toBe(true);
 
-})
+});
 
 // Test Q4 for False
 
@@ -63,7 +63,7 @@ test("check if a string given can be made into a permutation", () => {
 
     expect(palPer(string)).toBe(false);
 
-})
+});
 
 // Test Q5 for True
 
@@ -74,7 +74,7 @@ test("check to see if the strings are one change away from eachother", () => {
 
     expect(oneAway( string1, string2)).toBe(true);
 
-})
+});
 
 // Test Q5 for False
 
@@ -85,4 +85,22 @@ test("check to see if the strings are one change away from eachother", () => {
 
     expect(oneAway( string1, string2)).toBe(false);
 
-})
+});
+
+//Test Q6 return compressed string
+
+test("compress string when same values next to eachother", () => {
+
+    const string = "aabcccccaa";
+
+    expect(stringComp(string)).toBe("a2b1c5a2");
+});
+
+// Test Q6 return same string since compressed is longer 
+
+test("compress string when same values next to eachother", () => {
+
+    const string = "test";
+
+    expect(stringComp(string)).toBe("test");
+});
