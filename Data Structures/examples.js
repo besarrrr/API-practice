@@ -175,17 +175,40 @@ function palPer(string) {
 
 
 function oneAway(string1, string2) {
-    let count = 0
-
-    for (let i =0 ; i < string1.length; i++) {
-        for(let j =0; j < string2.length; j++) {
-            if (string1[i] !== string2[j] && i !== j) { // dont super get this part of i!==j and why that is correct
-                count += 1;
-            }
-        }
+    
+    if ( string1.length - string2.length > 1) {
+        return false;
     }
 
-    if (count <= 1) {
+    let first, second;
+    if (string1.length > string2.length) {
+      first = string1;
+      second = string2;
+    } else {
+      first = string2;
+      second = string1;
+    }
+
+    let count = 0
+
+    // split the string into lists using the .split() method
+
+    let str1 = first.split('');
+    let str2 = second.split('');
+
+    // use .sort() to put the strings  in UTF-16 code units order
+
+   let firstStringSorted = str1.sort(); 
+   let secondStringSorted= str2.sort();
+
+    for (let i =0 ; i < firstStringSorted.length; i++) {
+            if (firstStringSorted[i] != secondStringSorted[i] ) { 
+                count += 1;
+            }
+    }
+    
+
+    if (count < 2) {
         return true;
     } else {
         return false; 

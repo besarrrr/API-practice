@@ -69,8 +69,8 @@ test("check if a string given can be made into a permutation", () => {
 
 test("check to see if the strings are one change away from eachother", () => {
 
-    const string1= "abc";
-    const string2 = "abcd";
+    const string1= "palee";
+    const string2 = "pales";
 
     expect(oneAway( string1, string2)).toBe(true);
 
