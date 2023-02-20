@@ -1,4 +1,4 @@
-const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotate } = require("../examples.js")
+const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix } = require("../examples.js")
 
 
 // Test Q1
@@ -110,13 +110,13 @@ test("compress string when same values next to eachother", () => {
 
 test("rotate an n by n matrix by 90 degrees", () => {
 
-    const matrix = [
+    const m = [
         [1,2,3],
         [4,5,6],
         [7,8,9]
     ]
 
-    expect(rotate(matrix)).toBe([
+    expect(rotateMatrix(m)).toEqual([
         [7,4,1],
         [8,5,2],
         [9,6,3]
@@ -128,14 +128,14 @@ test("rotate an n by n matrix by 90 degrees", () => {
 
 test("rotate an n by n matrix by 90 degrees", () => {
 
-    const matrix = [
+    const m= [
         [1,2,3,4],
         [5,6,7,8],
         [9,10,11,12],
         [13,14,15,16]
     ]
 
-    expect(rotate(matrix)).toBe([
+    expect(rotateMatrix(m)).toEqual([
         [13,9,5,1],
         [14,10,6,2],
         [15,11,7,3],
