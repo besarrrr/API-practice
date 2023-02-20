@@ -1,4 +1,4 @@
-const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp } = require("../examples.js")
+const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotate } = require("../examples.js")
 
 
 // Test Q1
@@ -103,4 +103,23 @@ test("compress string when same values next to eachother", () => {
     const string = "test";
 
     expect(stringComp(string)).toBe("test");
+});
+
+
+//Test Q7 rotate matrix by 90 degrees
+
+test("rotate an n by n matrix by 90 degrees", () => {
+
+    const matrix = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    ]
+
+    expect(rotate(matrix)).toBe([
+        [7,4,1],
+        [8,5,2],
+        [9,6,3]
+    ])
+
 });

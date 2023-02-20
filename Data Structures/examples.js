@@ -248,4 +248,12 @@ function stringComp(string) {
    
 }
 
-module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp };
+// Question 7 Rotating a matrix by 90 degrees
+
+function rotate(matrix) {
+
+
+}
+
+
+module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotate };
