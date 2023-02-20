@@ -249,8 +249,32 @@ function stringComp(string) {
 }
 
 // Question 7 Rotating a matrix by 90 degrees
+        //      R
+        //    C 1  2  3 4       m[row][col]      to start assign the corners" A:1 B:4 C:16 D:13
+        //      5  6  7 8       for i             use a temp space to hold the value while swaping
+        //      9 10 11 12      for j              t = b b=a a=t this is essentially switching 1 and 4 - and ends with A:4 as temp
+        //      13 14 15 16     m[i][j]            t =C C=A A=T now we are switching the A:4 and C:16
+        //                                         t=D D=A A=T last time to switch A:16 with D:13
+        //
+        //      In the next iteration we are moving 2->8->15-9 B will be first 4 then 8 then 12 , then in next iteraton we want it to be 7
+        //       B => m[i=j][n-1-i]         n being the number of columns
+        //  We want the next iteration to start a row down and also a column in && n-1 give you the last column but n-1-i give you a column in for the 2nd iteration 
+        //      A => m[i][i=J] = this is how we get to all A vlaues and then also move one column in for 2nd iteration
+        //      c=> m[n-1-i][n-1-i-j]    d=m[n-1-i-j][i]
+        // Pattern shows that A's column = B's row
+        // B's column = C'c row
+        // C' column = D's row
+        // A's row = 's column
 
-function rotate(matrix) {
+        // i is for rows and we only need to use half the rows to  move the matrix 90 degrees
+        // for i< math.floor(n/2) - if n is odd then there is a middle value that doesnt need to be moved- like in a 5x5 
+        // for j<n-2i-1               the # of items in each row goes down     # 4 2 1
+        //                              2 for every iteration of i             n 5 5 5
+        //                                                                     i 0 1 2
+
+
+
+function rotate(m) {
 
 
 }
