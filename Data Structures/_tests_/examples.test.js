@@ -155,7 +155,7 @@ test("Given an m x n integer matrix matrix , if an element is 0 , set its entire
         [7,8,9]
     ]
 
-    expect(zeoMatrix(m)).toEqual([
+    expect(zeroMatrix(m)).toEqual([
         [0,0,0],
         [4,5,0],
         [7,8,0]

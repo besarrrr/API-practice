@@ -299,11 +299,38 @@ function stringComp(string) {
 
     // Q8- Zero Matrix Given an m x n integer matrix matrix , if an element is 0 , set its entire row and column to 0 's.
 
-    function zeroMatrix(m) {
+    function zeroMatrix(matrix) {
+        let n = matrix.length; // # of rows
+        let m = matrix[0].length; // # of columns
 
+        // Mark an 0 as true in first iteration of the matrix
+        // use r and c for row and columns DUHH
 
+        for( let r=0; r<n; r++) {
+            for(let c=0; c<m; c++){
+                
+                if( matrix[r][c] === 0 ) matrix[r][c] = true;
+            }
+        }
+
+    // Zero out corresponding rows and columns
+    for (let r = 0; r < n; r++) {
+        for (let c = 0; c < m; c++) {
+            if (matrix[r][c] === true) {
+                // Zero out row
+                for (let i = 0; i < n; i++) {
+                    matrix[i][c] = 0;
+                }
+                // Zero out column
+                for (let j = 0; j < m; j++) {
+                    matrix[r][j] = 0;
+                }
+            }
+        }
+        return matrix;
+    }
     };
 
 
 
-module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix};
+module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix} 
