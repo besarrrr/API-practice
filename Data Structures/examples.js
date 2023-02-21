@@ -274,7 +274,7 @@ function stringComp(string) {
 
 
 
-        let rotateMatrix = (m) => {
+        function rotateMatrix (m){
             let n = m.length;
           
             for (let i = 0; i < Math.floor(n / 2); i++) {
@@ -293,7 +293,17 @@ function stringComp(string) {
               }
             }
             return m;
-          };
+    };
 
 
-module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix };
+
+    // Q8- Zero Matrix Given an m x n integer matrix matrix , if an element is 0 , set its entire row and column to 0 's.
+
+    function zeroMatrix(m) {
+
+
+    };
+
+
+
+module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix};

@@ -1,4 +1,4 @@
-const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix } = require("../examples.js")
+const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix } = require("../examples.js")
 
 
 // Test Q1
@@ -140,6 +140,25 @@ test("rotate an n by n matrix by 90 degrees", () => {
         [14,10,6,2],
         [15,11,7,3],
         [16,12,8,4]
+    ])
+
+});
+
+
+// Trst Q7 Zero matrix
+
+test("Given an m x n integer matrix matrix , if an element is 0 , set its entire row and column to 0 's", () => {
+
+    const m = [
+        [1,2,0],
+        [4,5,6],
+        [7,8,9]
+    ]
+
+    expect(zeoMatrix(m)).toEqual([
+        [0,0,0],
+        [4,5,0],
+        [7,8,0]
     ])
 
 });
