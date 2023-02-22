@@ -331,6 +331,15 @@ function stringComp(string) {
     }
     };
 
+// Q9- String Rotation-check if one word is a substig of another 
+
+function isSubstring(s1, s2) {
+
+    if( s1.length != s2.length) {
+        return false
+    }
+}
 
 
-module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix} 
+
+module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix, isSubstring} 

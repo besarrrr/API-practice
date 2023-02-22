@@ -1,4 +1,4 @@
-const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix } = require("../examples.js")
+const { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix,  isSubstring } = require("../examples.js")
 
 
 // Test Q1
@@ -145,7 +145,7 @@ test("rotate an n by n matrix by 90 degrees", () => {
 });
 
 
-// Trst Q7 Zero matrix
+// Test Q8 Zero matrix
 
 test("Given an m x n integer matrix matrix , if an element is 0 , set its entire row and column to 0 's", () => {
 
@@ -161,4 +161,13 @@ test("Given an m x n integer matrix matrix , if an element is 0 , set its entire
         [7,8,0]
     ])
 
+});
+
+//Test Q9 is Substring
+
+test("check to see that s2 is a substring of s1", () => {
+    s1= "waterbottle";
+    s2= "erbottlewater";
+
+    expect(isSubstring(s1,s2)).toBe(true);
 });
