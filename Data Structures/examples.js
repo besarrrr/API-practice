@@ -338,7 +338,17 @@ function isSubstring(s1, s2) {
     if( s1.length != s2.length) {
         return false
     }
-}
+
+    const s1s1 = s1 + s1;
+    let result = s1s1.includes(s2);
+
+    if( result === true) {
+        return true;
+    }else{
+        return false;
+    }
+    
+};
 
 
 

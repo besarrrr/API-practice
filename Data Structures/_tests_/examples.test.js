@@ -167,7 +167,7 @@ test("Given an m x n integer matrix matrix , if an element is 0 , set its entire
 
 test("check to see that s2 is a substring of s1", () => {
     s1= "waterbottle";
-    s2= "erbottlewater";
+    s2= "erbottlewat";
 
     expect(isSubstring(s1,s2)).toBe(true);
 });
