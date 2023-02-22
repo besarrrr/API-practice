@@ -171,3 +171,17 @@ test("check to see that s2 is a substring of s1", () => {
 
     expect(isSubstring(s1,s2)).toBe(true);
 });
+
+test("check to see that s2 is a substring of s1", () => {
+    s1= "sandhamwich";
+    s2= "sandwichham";
+
+    expect(isSubstring(s1,s2)).toBe(false);
+});
+
+test("check to see that s2 is a substring of s1", () => {
+    s1= "waterbottle";
+    s2= "erbottlewater";
+
+    expect(isSubstring(s1,s2)).toBe(false);
+});
