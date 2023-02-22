@@ -198,22 +198,36 @@ function oneAway(string1, string2) {
 
     // use .sort() to put the strings  in UTF-16 code units order
 
-   let firstStringSorted = str1.sort(); 
-   let secondStringSorted= str2.sort();
+  // let firstStringSorted = str1.sort(); 
+   //console.log(firstStringSorted);
+   //let secondStringSorted= str2.sort();
+  // console.log(secondStringSorted);
 
-    for (let i =0 ; i < firstStringSorted.length; i++) {
-            if (firstStringSorted[i] != secondStringSorted[i] ) { 
+  const firstStringMap = {};
+
+
+    for (let str1Index =0 ; str1Index < str1.length; str1Index++) {
+
+        const currentLetter = str1[str1Index];
+
+        let count = firstStringMap[currentLetter];
+
+            if(count){
                 count += 1;
+            } else {
+                count = 1;
             }
-    }
+
+            firstStringMap[currentLetter] = count;
+    }; // would be helpful to make this a function to make sure it works right 
     
 
     if (count < 2) {
         return true;
     } else {
         return false; 
-    }
-}
+    };
+};
 
 
 // question 6 String compression: ex is taking string that is aabcccccaa into a2b1c5a2
@@ -335,21 +349,16 @@ function stringComp(string) {
 
 function isSubstring(s1, s2) {
 
-    if( s1.length != s2.length) {
+    if( s1.length !== s2.length) {
         return false
     }
 
     const s1s1 = s1 + s1;
     let result = s1s1.includes(s2);
 
-    if( result === true) {
-        return true;
-    }else{
-        return false;
-    }
+    return result;
     
 };
-     
-//testing
+      
 
 module.exports = { isUnique, permutation, urlIfy, palPer, oneAway, stringComp, rotateMatrix, zeroMatrix, isSubstring} 
