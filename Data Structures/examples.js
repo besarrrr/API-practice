@@ -221,6 +221,16 @@ function oneAway(string1, string2) {
             firstStringMap[currentLetter] = count;
     }; // would be helpful to make this a function to make sure it works right 
     
+    for( let str2Index =0 ; str2Index < str2.length; str2Index++) {
+
+        if (firstStringMap[str2[str2Index]]) {
+            count -= 1;
+          } else {
+            count+=1;
+          }
+          
+    };
+    
 
     if (count < 2) {
         return true;
