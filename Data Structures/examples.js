@@ -175,11 +175,12 @@ function palPer(string) {
 
 
 function oneAway(string1, string2) {
-    
-    if ( string1.length - string2.length > 1) {
-        return false;
+    // Check if the length difference between the strings is greater than 1
+    if (Math.abs(string1.length - string2.length) > 1) {
+      return false;
     }
-
+  
+    // Determine which string is longer
     let first, second;
     if (string1.length > string2.length) {
       first = string1;
@@ -188,58 +189,59 @@ function oneAway(string1, string2) {
       first = string2;
       second = string1;
     }
-
-    let count = 0
-
-    // split the string into lists using the .split() method
-
+  
+    // Initialize a counter to keep track of the number of differences
+    let count = 0;
+  
+    // Split the longer and shorter strings into arrays of characters
     let str1 = first.split('');
     let str2 = second.split('');
-
-    // use .sort() to put the strings  in UTF-16 code units order
-
-  // let firstStringSorted = str1.sort(); 
-   //console.log(firstStringSorted);
-   //let secondStringSorted= str2.sort();
-  // console.log(secondStringSorted);
-
-  const firstStringMap = {};
-
-
-    for (let str1Index =0 ; str1Index < str1.length; str1Index++) {
-
-        const currentLetter = str1[str1Index];
-
-        let count = firstStringMap[currentLetter];
-
-            if(count){
-                count += 1;
-            } else {
-                count = 1;
-            }
-
-            firstStringMap[currentLetter] = count;
-    }; // would be helpful to make this a function to make sure it works right 
-    
-    for( let str2Index =0 ; str2Index < str2.length; str2Index++) {
-
-        if (firstStringMap[str2[str2Index]]) {
-            count -= 1;
-          } else {
-            count+=1;
-          }
-          
-    };
-    
-
+  
+    // Create a hash map to count the frequency of characters in the longer string
+    const firstStringMap = {};
+  
+    // Loop through each character in the longer string
+    for (let str1Index = 0; str1Index < str1.length; str1Index++) {
+      // Get the current character
+      const currentLetter = str1[str1Index];
+  
+      // Check if the current character has already been counted
+      let count = firstStringMap[currentLetter];
+      if (count) {
+        // If it has, increment the count
+        count += 1;
+      } else {
+        // If it hasn't, set the count to 1
+        count = 1;
+      }
+  
+      // Store the updated count in the hash map
+      firstStringMap[currentLetter] = count;
+    }
+  
+    // Loop through each character in the shorter string
+    for (let str2Index = 0; str2Index < str2.length; str2Index++) {
+      // Check if the current character is already in the hash map
+      if (firstStringMap[str2[str2Index]]) {
+        // If it is, decrement the counter
+        count -= 1;
+      } else {
+        // If it isn't, increment the counter
+        count += 1;
+      }
+    }
+  
+    // If the number of differences is less than 2, the strings are one edit away
     if (count < 2) {
-        return true;
+      return true;
     } else {
-        return false; 
-    };
-};
-
-
+      return false; 
+    }
+ };
+  
+  
+  
+  
 // question 6 String compression: ex is taking string that is aabcccccaa into a2b1c5a2
 
 function stringComp(string) {
