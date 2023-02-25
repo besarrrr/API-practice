@@ -20,8 +20,14 @@ function removeDups(head) {
 
     return head; //returns linked list without dups 
     
-}
+};
+
+// Q2 return the kth to last element of a singly linked list
+
+function kthToLast(head, k) {
+
+};
 
 
 
-module.exports = { removeDups, }
+module.exports = { removeDups, kthToLast, }
