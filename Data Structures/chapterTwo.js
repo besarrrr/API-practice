@@ -59,9 +59,11 @@ function deleteMiddleNode(head) {
         fastPointer = fastPointer.next.next;
     } // this has the fast and slow apporach to get to the middle of the linked list
 
-    prev.next = slowPointer.next; // prev = null so when we get to the middle of the list we make sure to make that null by assigning it to prev
+    prev.next = slowPointer.next; //  change the next pointer of the previous node to point to the next node after the middle node
     
-    // 1 = prev 2= slowpointer 3 = slow pointer.next = essentially we assign prev.next to slowpointer.next to delete slowpointer(middle) returns 13 in this example 
+    //  ex 123  2= slowpointer/prev 3 = slow pointer.next/prev.
+    // slowPointer moves to the middle node, prev is updated to point to the node before it. Then, once we have found the middle node, 
+    // we update the next pointer of the previous node to point to the next node after the middle node.
 
     // return the new linked list 
  
