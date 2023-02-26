@@ -9,10 +9,10 @@ function removeDups(head) {
     let previous = null; // initializes a previous variable to null, which will be used to keep track of the previous node in the list.
 
     while ( current != null) {
-        if (seenValues.has(current.val)) {
+        if (seenValues.has(current.value)) {
             previous.next = current.next; //  If the current value has been seen, this line removes the current node by updating the next property of the previous node to skip the current node. 
         } else {
-            seenValues.add(current.val);
+            seenValues.add(current.value);
             previous = current; // This updates the previous variable to point to the current node, which will be used to remove the next duplicate node (if there is one).
         }
         current = current.next;; // updates the current variable to point to the next node in the list.
@@ -25,9 +25,49 @@ function removeDups(head) {
 // Q2 return the kth to last element of a singly linked list
 
 function kthToLast(head, k) {
-
+    let p1 = head;
+    let p2 = head;
+    
+    // Move p2 k nodes ahead
+    for (let i = 0; i < k; i++) {
+      if (p2 == null) {
+        return null; // The linked list has less than k nodes
+      }
+      p2 = p2.next;
+    }
+    
+    // Move p1 and p2 simultaneously
+    while (p2 != null) {
+      p1 = p1.next;
+      p2 = p2.next;
+    }
+    
+    // p1 is now pointing to the kth to last element
+    return p1.value;
 };
 
+// Q3 delete middle node
+
+function deleteMiddleNode(head) {
+    let fastPointer = head;
+    let slowPointer = head;
+    let prev = null;
+
+    while (fastPointer != null && fastPointer.next != null) {
+        prev = slowPointer; // keep track of the node before the middle node
+        slowPointer = slowPointer.next;
+        fastPointer = fastPointer.next.next;
+    } // this has the fast and slow apporach to get to the middle of the linked list
+
+    prev.next = slowPointer.next; // prev = null so when we get to the middle of the list we make sure to make that null by assigning it to prev
+    
+    // 1 = prev 2= slowpointer 3 = slow pointer.next = essentially we assign prev.next to slowpointer.next to delete slowpointer(middle) returns 13 in this example 
+
+    // return the new linked list 
+ 
+    return head;
+}
 
 
-module.exports = { removeDups, kthToLast, }
+
+module.exports = { removeDups, kthToLast, deleteMiddleNode }
