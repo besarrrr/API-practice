@@ -237,7 +237,7 @@ function oneAway(string1, string2) {
     } else {
       return false; 
     }
- };
+};
   
   
   
@@ -254,15 +254,12 @@ function stringComp(string) {
        let count = 1;
        let currentLetter = messageArray[i];
    
-       while (i < messageArray.length - 1 && messageArray[i] === messageArray[i + 1]){
+       while (i < messageArray.length - 1 && messageArray[i] === messageArray[i + 1]){ //   using i < messageArray.length - 1 ensures that the loop will works while there is still a next character 
            count++;
            i++;
         }   
-         if (count === 1){
-           compressed += currentLetter + count;
-         } else {
-           compressed += currentLetter + count;
-         }
+
+        compressed += currentLetter + count; // add to the empty string
    
      }
    
@@ -300,11 +297,12 @@ function stringComp(string) {
 
 
 
-        function rotateMatrix (m){
+function rotateMatrix (m){
             let n = m.length;
           
             for (let i = 0; i < Math.floor(n / 2); i++) {
               for (let j = 0; j < n - (2 * i) - 1; j++) {
+                
                 let t = m[i + j][n - 1 - i];
                 m[i + j][n - 1 - i] = m[i][i + j];
                 m[i][i + j] = t;
@@ -319,11 +317,10 @@ function stringComp(string) {
               }
             }
             return m;
-    };
+};
 
 
-
-    // Q8- Zero Matrix Given an m x n integer matrix matrix , if an element is 0 , set its entire row and column to 0 's.
+// Q8- Zero Matrix Given an m x n integer matrix matrix , if an element is 0 , set its entire row and column to 0 's.
 
     function zeroMatrix(matrix) {
         let n = matrix.length; // # of rows
@@ -343,11 +340,11 @@ function stringComp(string) {
     for (let r = 0; r < n; r++) {
         for (let c = 0; c < m; c++) {
             if (matrix[r][c] === true) {
-                // Zero out row
+                //  iterates over each row of the matrix keeping column consitent
                 for (let i = 0; i < n; i++) {
                     matrix[i][c] = 0;
                 }
-                // Zero out column
+                //  iterates over each column of the matrix keeping row consitent
                 for (let j = 0; j < m; j++) {
                     matrix[r][j] = 0;
                 }
