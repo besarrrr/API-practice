@@ -169,8 +169,6 @@ function palPer(string) {
 
 }
 
-
-
 // Q 5 one away - goal is to see if string 1 is one or less moves away from being string 2 
 
 
@@ -218,6 +216,8 @@ function oneAway(string1, string2) {
       // Store the updated count in the hash map
       firstStringMap[currentLetter] = count;
     }
+
+    // letter is the key and count is the value in this map
   
     // Loop through each character in the shorter string
     for (let str2Index = 0; str2Index < str2.length; str2Index++) {
@@ -238,8 +238,6 @@ function oneAway(string1, string2) {
       return false; 
     }
 };
-  
-  
   
   
 // question 6 String compression: ex is taking string that is aabcccccaa into a2b1c5a2
