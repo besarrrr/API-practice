@@ -1,6 +1,6 @@
-// Linked List 
-
-// Q1 Remove Dups
+// Linked List Chapter 2
+     
+// Q1 Remove Dups 
 
 function removeDups(head) {
 
