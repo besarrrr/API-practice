@@ -1,4 +1,4 @@
-//Array Chapter 1    
+//Array  
 
 let orders = [
     [1, "John Doe", "2021-01-01"],
