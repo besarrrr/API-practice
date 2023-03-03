@@ -68,8 +68,24 @@ function deleteMiddleNode(head) {
     // return the new linked list 
  
     return head;
-}
+};
+
+// Partition   
+
+function partition(head, p) {
+
+// make two different new linked listed
 
 
+// then go back to the linked list and compare < > to decide where the values go in the new linked lists
 
-module.exports = { removeDups, kthToLast, deleteMiddleNode }
+//combine the two new lists
+
+
+// return new list
+
+};
+ 
+
+
+module.exports = { removeDups, kthToLast, deleteMiddleNode, partition };
