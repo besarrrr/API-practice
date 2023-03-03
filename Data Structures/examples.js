@@ -176,67 +176,42 @@ function oneAway(string1, string2) {
     // Check if the length difference between the strings is greater than 1
     if (Math.abs(string1.length - string2.length) > 1) {
       return false;
-    }
+    };
   
     // Determine which string is longer
     let first, second;
+
     if (string1.length > string2.length) {
       first = string1;
       second = string2;
     } else {
       first = string2;
       second = string1;
-    }
+    };
   
     // Initialize a counter to keep track of the number of differences
-    let count = 0;
+    let differences = 0;
   
     // Split the longer and shorter strings into arrays of characters
     let str1 = first.split('');
     let str2 = second.split('');
   
-    // Create a hash map to count the frequency of characters in the longer string
-    const firstStringMap = {};
-  
-    // Loop through each character in the longer string
-    for (let str1Index = 0; str1Index < str1.length; str1Index++) {
-      // Get the current character
-      const currentLetter = str1[str1Index];
-  
-      // Check if the current character has already been counted
-      let count = firstStringMap[currentLetter];
-      if (count) {
-        // If it has, increment the count
-        count += 1;
-      } else {
-        // If it hasn't, set the count to 1
-        count = 1;
-      }
-  
-      // Store the updated count in the hash map
-      firstStringMap[currentLetter] = count;
-    }
+   
+    for(let i = 0; i < str1.length; i++){
+      for (let j =0; j < str2.length; j++) {
+        if (str1[i] != str2[j]) {
+          differences += 1
+        };
+      };
+    };
 
-    // letter is the key and count is the value in this map
-  
-    // Loop through each character in the shorter string
-    for (let str2Index = 0; str2Index < str2.length; str2Index++) {
-      // Check if the current character is already in the hash map
-      if (firstStringMap[str2[str2Index]]) {
-        // If it is, decrement the counter
-        count -= 1;
-      } else {
-        // If it isn't, increment the counter
-        count += 1;
-      }
-    }
-  
+    
     // If the number of differences is less than 2, the strings are one edit away
-    if (count < 2) {
+    if (differences < 2) {
       return true;
     } else {
       return false; 
-    }
+    };
 };
   
   

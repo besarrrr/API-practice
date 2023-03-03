@@ -76,6 +76,17 @@ test("check to see if the strings are one change away from eachother", () => {
 
 });
 
+
+test("check to see if the strings are one change away from eachother", () => {
+
+    const string1= "pleas";
+    const string2 = "pales";
+
+    expect(oneAway( string1, string2)).toBe(false);
+
+});
+
+
 // Test Q5 for False
 
 test("check to see if the strings are one change away from eachother", () => {
