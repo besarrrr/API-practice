@@ -69,8 +69,26 @@ test("check if a string given can be made into a permutation", () => {
 
 test("check to see if the strings are one change away from eachother", () => {
 
-    const string1= "palee";
-    const string2 = "pales";
+    const string1= "pale";
+    const string2 = "ple";
+
+    expect(oneAway( string1, string2)).toBe(true);
+
+});
+
+test("check to see if the strings are one change away from eachother", () => {
+
+    const string1= "pale";
+    const string2 = "ale";
+
+    expect(oneAway( string1, string2)).toBe(true);
+
+});
+
+test("check to see if the strings are one change away from eachother", () => {
+
+    const string1= "pales";
+    const string2 = "pale";
 
     expect(oneAway( string1, string2)).toBe(true);
 
@@ -79,10 +97,10 @@ test("check to see if the strings are one change away from eachother", () => {
 
 test("check to see if the strings are one change away from eachother", () => {
 
-    const string1= "pleas";
-    const string2 = "pales";
+    const string1= "pale";
+    const string2 = "bale";
 
-    expect(oneAway( string1, string2)).toBe(false);
+    expect(oneAway( string1, string2)).toBe(true);
 
 });
 
@@ -91,8 +109,8 @@ test("check to see if the strings are one change away from eachother", () => {
 
 test("check to see if the strings are one change away from eachother", () => {
 
-    const string1= "abc";
-    const string2 = "abbbbbd";
+    const string1= "pale";
+    const string2 = "bake";
 
     expect(oneAway( string1, string2)).toBe(false);
 

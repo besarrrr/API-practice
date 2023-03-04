@@ -171,7 +171,6 @@ function palPer(string) {
 
 // Q 5 one away - goal is to see if string 1 is one or less moves away from being string 2 
 
-
 function oneAway(string1, string2) {
     // Check if the length difference between the strings is greater than 1
     if (Math.abs(string1.length - string2.length) > 1) {
@@ -180,8 +179,8 @@ function oneAway(string1, string2) {
   
     // Determine which string is longer
     let first, second;
-
-    if (string1.length > string2.length) {
+  
+    if (string1.length >= string2.length) {
       first = string1;
       second = string2;
     } else {
@@ -189,30 +188,63 @@ function oneAway(string1, string2) {
       second = string1;
     };
   
-    // Initialize a counter to keep track of the number of differences
-    let differences = 0;
+    // check to see if the strings are more than one edit away
+    let oneEditAway = function(first, second) {
+      // Initialize a counter to keep track of the number of differences
+      let differences = 0;
   
-    // Split the longer and shorter strings into arrays of characters
-    let str1 = first.split('');
-    let str2 = second.split('');
+      // Compare two strings
+      for (let i = 0; i < first.length; i++) {
+        if (first[i] != second[i]) {
+          differences += 1;
+        }
+      }
   
-   
-    for(let i = 0; i < str1.length; i++){
-      for (let j =0; j < str2.length; j++) {
-        if (str1[i] != str2[j]) {
-          differences += 1
-        };
-      };
-    };
-
-    
-    // If the number of differences is less than 2, the strings are one edit away
-    if (differences < 2) {
+      if (differences > 1) {
+        return false;
+      }
+  
       return true;
-    } else {
-      return false; 
     };
+  
+    // Now check to see if the strings are one insert away from being true
+    let oneInsertAway = function(first, second) {
+      // Initialize a counter to keep track of the number of differences
+      let differences = 0;
+  
+      // use .sort() to put the strings in UTF-16 code units order
+      let longerString = first.split('').sort();
+      let shorterString = second.split('').sort();
+  
+      // Now a for loop to compare the strings
+      let i = 0, j = 0;
+      while (i < longerString.length && j < shorterString.length) {
+        if (longerString[i] == shorterString[j]) {
+          i++;
+          j++;
+        } else {
+          differences += 1;
+          i++;
+        }
+      }
+  
+      if (differences > 1) {
+        return false;
+      }
+  
+      return true;
+    };
+  
+    let editResult = oneEditAway(first, second);
+    let insertResult = oneInsertAway(first, second);
+  
+    if (editResult === false && insertResult === false) {
+      return false;
+    } else {
+      return true;
+    }
 };
+  
   
   
 // question 6 String compression: ex is taking string that is aabcccccaa into a2b1c5a2
