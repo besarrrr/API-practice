@@ -72,17 +72,35 @@ function deleteMiddleNode(head) {
 
 // Partition   
 
-function partition(head, p) {
+function partition(head, x) {
 
-// make two different new linked listed
+    // make two different new linked listed
 
+    let lessThan = new ListNode(0)
+    let moreThan = new ListNode(0);
 
-// then go back to the linked list and compare < > to decide where the values go in the new linked lists
+    GreaterThanX = moreThan;
+    lessThanX = lessThan;
+    currentValue = head;
 
-//combine the two new lists
+    // then go back to the linked list and compare < > to decide where the values go in the new linked lists
 
+    while ( currentValue != null) {
+        if( currentValue.value < x) { 
+            
+            lessThanX.next = currentValue
+            lessThanX = currentValue
+            
+        } else {
+            GreaterThanX.next= currentValue
+            GreaterThanX =currentValue
+            currentValue - currentValue.next
+        }
 
-// return new list
+        lessThanX = moreThan.next, GreaterThanX.next = null
+
+        return lessThan.next;
+    }
 
 };
  
