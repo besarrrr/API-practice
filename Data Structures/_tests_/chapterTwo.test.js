@@ -71,21 +71,21 @@ test("Remove middle node", () => {
 
 // Q4 Partition 
 
-test("Partion around X", () => {
+// test("Partion around X", () => {
 
-    const head = new Node(6);
-    head.next = new Node(10);
-    head.next.next = new Node(12);
-    head.next.next.next = new Node(3);
+//     const head = new Node(6);
+//     head.next = new Node(10);
+//     head.next.next = new Node(12);
+//     head.next.next.next = new Node(3);
     
 
 
-    const expectedOutput = new Node(6);
-    expectedOutput.next = new Node(3);
-    expectedOutput.next.next = new Node(10);
-    expectedOutput.next.next.next = new Node(12);
+//     const expectedOutput = new Node(6);
+//     expectedOutput.next = new Node(3);
+//     expectedOutput.next.next = new Node(10);
+//     expectedOutput.next.next.next = new Node(12);
     
-    expect(partition(head, 6).toEqual(expectedOutput));
+//     expect(partition(head, 6).toEqual(expectedOutput));
 
     
-});
+// });

@@ -74,10 +74,18 @@ function deleteMiddleNode(head) {
 
 function partition(head, x) {
 
+    class Node {
+        constructor(value) {
+          this.value = value;
+          this.next = null;
+        }
+    };
+
+
     // make two different new linked listed
 
-    let lessThan = new ListNode(0)
-    let moreThan = new ListNode(0);
+    let lessThan = new Node(0);
+    let moreThan = new Node(0);
 
     GreaterThanX = moreThan;
     lessThanX = lessThan;
