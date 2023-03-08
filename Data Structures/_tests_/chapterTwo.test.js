@@ -69,7 +69,7 @@ test("Remove middle node", () => {
 
 });
 
-// Q4 Partition 
+ // Q4 Partition 
 
 // test("Partion around X", () => {
 
@@ -78,8 +78,6 @@ test("Remove middle node", () => {
 //     head.next.next = new Node(12);
 //     head.next.next.next = new Node(3);
     
-
-
 //     const expectedOutput = new Node(6);
 //     expectedOutput.next = new Node(3);
 //     expectedOutput.next.next = new Node(10);
@@ -87,5 +85,4 @@ test("Remove middle node", () => {
     
 //     expect(partition(head, 6).toEqual(expectedOutput));
 
-    
-// });
+//  });

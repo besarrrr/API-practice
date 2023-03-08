@@ -74,43 +74,7 @@ function deleteMiddleNode(head) {
 
 function partition(head, x) {
 
-    class Node {
-        constructor(value) {
-          this.value = value;
-          this.next = null;
-        }
-    };
-
-
-    // make two different new linked listed
-
-    let lessThan = new Node(0);
-    let moreThan = new Node(0);
-
-    GreaterThanX = moreThan;
-    lessThanX = lessThan;
-    currentValue = head;
-
-    // then go back to the linked list and compare < > to decide where the values go in the new linked lists
-
-    while ( currentValue != null) {
-        if( currentValue.value < x) { 
-            
-            lessThanX.next = currentValue
-            lessThanX = currentValue
-            
-        } else {
-            GreaterThanX.next= currentValue
-            GreaterThanX =currentValue
-            currentValue - currentValue.next
-        }
-
-        lessThanX = moreThan.next, GreaterThanX.next = null
-
-        return lessThan.next;
-    }
-
-};
+  }
  
 
 
