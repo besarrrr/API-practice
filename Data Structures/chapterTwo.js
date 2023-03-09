@@ -74,8 +74,33 @@ function deleteMiddleNode(head) {
 
 function partition(head, x) {
 
-  }
- 
+
+    let Front = null;
+    let Back = null;
+
+
+    while( head != null ) {
+        let next = head.next;
+        if(head.value < x) {
+            head.next = Front;
+            Front = head;
+        } else {
+            head.next = Back;
+            Back = head;
+        }
+        head = next;
+    }
+    if (Front == null) {
+        return Back;
+      }
+      let current = Front;
+      while (current.next != null) {
+        current = current.next;
+      }
+      current.next = Back;
+      return Front;
+
+};
 
 
 module.exports = { removeDups, kthToLast, deleteMiddleNode, partition };
