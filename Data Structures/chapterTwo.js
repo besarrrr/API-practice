@@ -1,4 +1,17 @@
 // Linked List 
+
+class Node {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+};
+
+class LinkedList{
+    constructor(){
+        this.head = null;
+    }
+}  
      
 // Q1 Remove Dups 
 
@@ -102,5 +115,44 @@ function partition(head, x) {
 
 };
 
+function sumLists(x,y) {
 
-module.exports = { removeDups, kthToLast, deleteMiddleNode, partition };
+    if(x == null && y == null){
+        return null;
+    }
+
+    let node1 = x;
+    let node2 =y;
+    let result = null;
+
+    while ( node1 !== null && node2 !== null) {
+
+        let carryOver = 0;
+        let sum;
+
+        if (node1 == null){
+            sum = node2.value
+        } else if (node2 == null){
+            sum = node1.value
+        } else {
+            sum = node1.value + node2.value
+        }
+
+        let result = new Node((sum % 10) + carryOver);
+
+        if ( sum >= 10) {
+            carryOver = 1;
+        } else {
+            carryOver = 0;
+        }
+
+        node1 = node1.next;
+        node2 = node2.next;
+        result = result.next;
+    };
+    return result;
+    
+};
+
+
+module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists };

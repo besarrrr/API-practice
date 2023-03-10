@@ -1,4 +1,4 @@
-const { removeDups, kthToLast, deleteMiddleNode, partition } = require("../chapterTwo.js")
+const { removeDups, kthToLast, deleteMiddleNode, partition, sumLists } = require("../chapterTwo.js")
 
 class Node {
     constructor(value) {
@@ -92,3 +92,24 @@ test("Partion around X", () => {
      expect(partition(head, 6)).toEqual(expectedOutput);
 });
 
+
+// Q4 Sum Lists
+
+test("Sumlists", ()=> {
+
+    const x = new Node(9);
+    x.next = new Node(2);
+    x.next.next = new Node(3);
+
+    const y = new Node(3);
+    y.next = new Node(2);
+    y.next.next = new Node(3);
+
+    const expectedOutput = new Node(2);
+    expectedOutput.next = new Node(5);
+    expectedOutput.next.next = new Node(6);
+
+    expect(sumLists(x,y)).toEqual(expectedOutput);
+
+
+});
