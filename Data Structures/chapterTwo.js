@@ -152,9 +152,10 @@ function sumLists(x,y) {
         node2 = node2.next;
         result = result.next;
     };
+    
     return result;
     
 };
 
 
-module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists };
+module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists }; 
