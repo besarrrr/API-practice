@@ -123,7 +123,7 @@ function sumLists(x,y) {
 
     let node1 = x;
     let node2 =y;
-    let result;
+    
     let carryOver = 0;
 
     while ( node1 !== null && node2 !== null) {
@@ -138,7 +138,7 @@ function sumLists(x,y) {
             sum = node1.value + node2.value
         };
     
-        let result = new Node((sum >= 10 ? sum - 10: sum) + carryOver);
+        node1.value = ((sum >= 10 ? sum - 10: sum) + carryOver);
 
         if ( sum >= 10) {
             carryOver = 1;
@@ -148,12 +148,10 @@ function sumLists(x,y) {
 
         node1 = node1.next;
         node2 = node2.next;
-        result = result.next;
-
 
     };
 
-    return result;
+    return x;
 
 };
 

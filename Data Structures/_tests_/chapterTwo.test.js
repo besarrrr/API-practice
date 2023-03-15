@@ -113,3 +113,26 @@ test("Sumlists", ()=> {
 
 
 });
+
+
+// Q4 Sum Lists Q2
+
+test("Sumlists", ()=> {
+
+    const x = new Node(0);
+    x.next = new Node(7);
+    x.next.next = new Node(2);
+
+    const y = new Node(9);
+    y.next = new Node(8);
+    y.next.next = new Node(9);
+
+    const expectedOutput = new Node(9);
+    expectedOutput.next = new Node(5);
+    expectedOutput.next.next = new Node(2);
+   // expectedOutput.next.next.next = new Node(1);
+  
+
+    expect(sumLists(x,y)).toEqual(expectedOutput);
+
+});
