@@ -115,6 +115,8 @@ function partition(head, x) {
 
 };
 
+// Sum List
+
 function sumLists(x,y) {
 
     if(x == null && y == null){
@@ -155,5 +157,12 @@ function sumLists(x,y) {
 
 };
 
+// Palindrome
 
-module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists }; 
+function isPalindrome(head){
+
+
+};
+
+
+module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists, isPalindrome}; 
