@@ -1,4 +1,4 @@
-const { removeDups, kthToLast, deleteMiddleNode, partition, sumLists } = require("../chapterTwo.js")
+const { removeDups, kthToLast, deleteMiddleNode, partition, sumLists, isPalindrome} = require("../chapterTwo.js")
 
 class Node {
     constructor(value) {
@@ -134,5 +134,38 @@ test("Sumlists", ()=> {
   
 
     expect(sumLists(x,y)).toEqual(expectedOutput);
+
+});
+
+// Test Q6 for true
+
+test("is the list a palindrone?", () => {
+
+    const head = new Node('T');
+    head.next = new Node('A');
+    head.next.next = new Node('C');
+    head.next.next.next = new Node('O');
+    head.next.next.next.next = new Node('C');
+    head.next.next.next.next.next = new Node('A');
+    head.next.next.next.next.next.next = new Node('T');
+
+
+    expect(isPalindrome(head)).toBe(true);
+
+});
+
+// Test Q6 for False
+
+test("is the list a palindrone?", () => {
+
+    const head = new Node('N');
+    head.next = new Node('A');
+    head.next.next = new Node('T');
+    head.next.next.next = new Node('A');
+    head.next.next.next.next = new Node('C');
+    head.next.next.next.next.next = new Node('A');
+    head.next.next.next.next.next.next = new Node('T');
+
+    expect(isPalindrome(head)).toBe(false);
 
 });

@@ -159,9 +159,46 @@ function sumLists(x,y) {
 
 // Palindrome
 
-function isPalindrome(head){
+function isPalindrome(head) {
+    
+    function reverseList(input) {
+      let previous = null;
+      let next = null;
+      let current = input;
+  
+      while (current !== null) {
+        next = current.next;
+        current.next = previous;
+        previous = current;
+        current = next;
+      }
+      return previous;
+    }
+  
+    const reversed = reverseList(head);
 
-
+    let node1 = head;
+    let node2 = reversed;
+  
+    let count = 0;
+  
+    while (node1 !== null) {
+        if (node1.value !== node2.value) {
+            count += 1;
+            node1 = node1.next;
+            node2 = node2.next;
+        } else {
+            count +=0;
+            node1 = node1.next;
+            node2 = node2.next;
+        }
+    }
+  
+    if (count > 1) {
+      return false;
+    } else {
+      return true;
+    }
 };
 
 
