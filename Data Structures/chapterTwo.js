@@ -153,7 +153,7 @@ function sumLists(x,y) {
 
     };
 
-    return x;
+    return x; // writing over one of the list instead of returning a new one
 
 };
 
@@ -185,7 +185,7 @@ function isPalindrome(head) {
     while (node1 !== null) {
         if (node1.value !== node2.value) {
             count += 1;
-            node1 = node1.next;
+            node1 = node1.next; // node1.next goes to null here so that is an issue
             node2 = node2.next;
         } else {
             count +=0;
