@@ -160,26 +160,26 @@ function sumLists(x,y) {
 // Palindrome
 
 function isPalindrome(head) {
-    
+
     function reverseList(input) {
-      let previous = null;
-      let next = null;
-      let current = input;
-  
-      while (current !== null) {
-        next = current.next;
-        current.next = previous;
-        previous = current;
-        current = next;
-      }
-      return previous;
-    }
-  
+        let previous = null;
+        let next = null;
+        let current = input;
+    
+        while (current !== null) {
+          next = current.next;
+          current.next = previous;
+          previous = current;
+          current = next;
+        }
+        return previous;
+    };
+
     const reversed = reverseList(head);
 
     let node1 = head;
     let node2 = reversed;
-  
+
     let count = 0;
   
     while (node1 !== null) {
@@ -192,14 +192,18 @@ function isPalindrome(head) {
             node1 = node1.next;
             node2 = node2.next;
         }
-    }
+    };
   
-    if (count > 1) {
+    if (count >= 2 ) {
       return false;
     } else {
       return true;
-    }
+    };
 };
+
+// Intersection
+
+  
 
    
 module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists, isPalindrome}; 
