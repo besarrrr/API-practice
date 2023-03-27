@@ -201,9 +201,5 @@ function isPalindrome(head) {
     };
 };
 
-// Intersection
-
-  
-
    
 module.exports = { removeDups, kthToLast, deleteMiddleNode, partition, sumLists, isPalindrome}; 
