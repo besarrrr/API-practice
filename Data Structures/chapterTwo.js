@@ -159,12 +159,11 @@ function sumLists(x,y) {
 
 // Palindrome
 
-function isPalindrome(head) {
-
-    function reverseList(input) {
-        let previous = null;
-        let next = null;
-        let current = input;
+// Helper function outside of the main function to reverse list 
+function reverseList(head) {
+    let current = head;
+    let previous = null;
+    let next;
     
         while (current !== null) {
           next = current.next;
@@ -173,32 +172,32 @@ function isPalindrome(head) {
           current = next;
         }
         return previous;
-    };
+};
 
-    const reversed = reverseList(head);
+function isPalindrome(head) {
 
-    let node1 = head;
-    let node2 = reversed;
+    let fast = head;
+    let slow = head;
+    let startPointer = head;
+    let length = 0;
 
-    let count = 0;
-  
-    while (node1 !== null) {
-        if (node1.value !== node2.value) {
-            count += 1;
-            node1 = node1.next; // node1.next goes to null here so that is an issue
-            node2 = node2.next;
-        } else {
-            count +=0;
-            node1 = node1.next;
-            node2 = node2.next;
-        }
-    };
-  
-    if (count >= 2 ) {
-      return false;
-    } else {
-      return true;
-    };
+    while(fast && fast.next) {
+        fast = fast.next.next;
+        slow = slow.next;
+        length++;
+    }
+
+    let middle = reverseList(slow);
+
+    while(length) {
+        length--;
+        if(middle.value !== startPointer.value) return false;
+        middle = middle.next;
+        startPointer = startPointer.next;
+    }
+
+    return true;
+
 };
 
    
